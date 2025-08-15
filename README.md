@@ -8,6 +8,6 @@ Building the first backend framework with (static + live) NOM (Node Object Model
 
 ## Aims:
 - [x] Build basic nodes & supernodes library.
-- [] Create node execution functions.
-- [] Further Refine Architecture.
+-[] Create node execution functions.
+-[] Further Refine Architecture.
 
