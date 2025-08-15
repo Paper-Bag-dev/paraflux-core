@@ -2,9 +2,13 @@
   "name": "@paraflux/core",
   "version": "1.0.0",
   "description": "Factory Methods & Core Fns Library for Paraflux.",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc -b"
   },
   "keywords": [],
   "author": "",
