@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.execTreeNaive = execTreeNaive;
+function execTreeNaive(node, incomingInputs = {}) {
+    node.inputs = { ...incomingInputs };
+    let result = {};
+    if (typeof node.code === "function") {
+        result = node.code() || {};
+    }
+    node.outputs = { ...result };
+    const nextInputs = { ...node.outputs };
+    if (node.children && node.children.length > 0) {
+        for (const child of node.children) {
+            execTreeNaive(child, nextInputs);
+        }
+    }
+}
