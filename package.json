@@ -1,6 +1,6 @@
 {
   "name": "@paraflux/core",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Factory Methods & Core Fns Library for Paraflux.",
   "main": "./dist/index.js",
   "types": "dist/index.d.ts",
