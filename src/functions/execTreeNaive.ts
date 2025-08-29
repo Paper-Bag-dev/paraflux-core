@@ -6,7 +6,7 @@ export function execTreeNaive(node: Node | SuperNode, incomingInputs: Record<str
 
     let result: Record<string, any> = {};
     if (typeof node.code === "function") {
-        result = node.code() || {};
+        result = node.code?.call(node) || {};
     }
 
     node.outputs = { ...result };

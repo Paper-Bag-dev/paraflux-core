@@ -5,7 +5,7 @@ function execTreeNaive(node, incomingInputs = {}) {
     node.inputs = { ...incomingInputs };
     let result = {};
     if (typeof node.code === "function") {
-        result = node.code() || {};
+        result = node.code?.call(node) || {};
     }
     node.outputs = { ...result };
     const nextInputs = { ...node.outputs };
