@@ -7,4 +7,4 @@ export declare enum type {
     Metadata = 2,
     Controller = 3
 }
-export type NodeConstructor = new (props: Props) => Node | SuperNode;
+export type NodeConstructor<P = any> = new (props?: Props<P>) => Node<P> | SuperNode<P>;

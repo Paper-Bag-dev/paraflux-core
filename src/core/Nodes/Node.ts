@@ -1,20 +1,19 @@
 import { NodeConstructor, type } from "../../types";
-import {Props} from "../../types/Props";
 import SuperNode from "./SuperNodes";
 
-abstract class Node{
+abstract class Node<P = Record<string, any>>{
     __type: type.Node = type.Node;
-    inputs: Props;
+    inputs: P;
     outputs: Record<string, any> = {};
     children: Node[] = [];
 
-    constructor(inputs?: Props){
-        this.inputs = inputs ?? {} as Props;
+    constructor(inputs?: P){
+        this.inputs = inputs ?? {} as P;
     }
 
-    static createNode(props: Props | null, ...children: Array<NodeConstructor>){
+    static createNode(props: Record<string,any> | null, ...children: Array<NodeConstructor>){
         const instantiatedNodes = children.map((child) => {
-            const childInst = new child(props ?? {} as Props);
+            const childInst = new child(props ?? {} as Record<string, any>);
             childInst.render();
             return childInst;
         });

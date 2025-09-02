@@ -9,4 +9,4 @@ export enum type{
     Controller
 }
 
-export type NodeConstructor = new (props: Props) => Node | SuperNode;
+export type NodeConstructor<P = any> = new (props?: Props<P>) => Node<P> | SuperNode<P>;

@@ -1,1 +1,1 @@
-export type Props =  {} | typeof Node | string;
+export type Props<P> =  {} | typeof Node | string | P;

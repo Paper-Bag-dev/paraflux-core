@@ -2,6 +2,7 @@ import Node from "../core/Nodes/Node";
 import SuperNode from "../core/Nodes/SuperNodes";
 
 export function execTreeNaive(node: Node | SuperNode, incomingInputs: Record<string, any> = {}) {
+    try {
     node.inputs = { ...incomingInputs };
 
     let result: Record<string, any> = {};
@@ -17,5 +18,8 @@ export function execTreeNaive(node: Node | SuperNode, incomingInputs: Record<str
         for (const child of node.children) {
             execTreeNaive(child, nextInputs);
         }
+    }
+    } catch (error) {
+        console.log("Error while running your application. Wrong Code/ Invalid Childrens., ", error);
     }
 }
